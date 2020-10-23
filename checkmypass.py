@@ -1,6 +1,5 @@
 import requests
 import hashlib
-import sys
 
 def request_api_data(Query):
     url = 'https://api.pwnedpasswords.com/range/' + Query
