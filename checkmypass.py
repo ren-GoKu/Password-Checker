@@ -29,7 +29,7 @@ def check_password(passwords):
     return get_the_count_of_same_leaked_pass(response,remaining_char)
 print("Type stop any time if you want to stop")
 while True: 
-    your_password = input("Enter the passwor to check:")
+    your_password = input("Enter the password to check:")
     if your_password == "stop" or your_password == "STOP" or your_password =="Stop":
         exit()
     else:
