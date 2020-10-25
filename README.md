@@ -1,2 +1,2 @@
 # Password-Checker
-This is the api for checking if your password is ever leaked in the online
+Are you using the password that is leaked online.Check it!
