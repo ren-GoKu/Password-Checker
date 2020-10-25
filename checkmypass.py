@@ -1,5 +1,6 @@
 import requests
 import hashlib
+import sys
 
 def request_api_data(Query):
     url = 'https://api.pwnedpasswords.com/range/' + Query
@@ -26,13 +27,19 @@ def check_password(passwords):
     first_5_character, remaining_char = hashed_password[:5], hashed_password[5:]
     response = request_api_data(first_5_character)
     return get_the_count_of_same_leaked_pass(response,remaining_char)
-
-your_password = input("Enter the passwor to check:")
-no_of_same_pass = check_password(your_password)
-if no_of_same_pass:
-    print(f"this password  {your_password} has been used {no_of_same_pass} times")
-    print("You should consider changing your password")
-else: 
-    print("Your password is safe")
+print("Type stop any time if you want to stop")
+while True: 
+    your_password = input("Enter the passwor to check:")
+    if your_password == "stop" or your_password == "STOP" or your_password =="Stop":
+        exit()
+    else:
+        no_of_same_pass = check_password(your_password)
+        if no_of_same_pass:
+            print(f"this password  {your_password} has been used {no_of_same_pass} times")
+            print("You should consider changing your password")
+        else: 
+            print("Your password is safe")
+    
+    
 
 
